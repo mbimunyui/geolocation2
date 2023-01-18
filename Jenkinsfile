@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    tools {
+        maven 'Maven 3.8.7'
+        jdk 'jkd11'
+
+    }
         stages {
             stage('Hello') {
                 steps {
@@ -9,8 +14,9 @@ pipeline {
             }
             stage('Build') {
                 steps {
-                    echo 'Build'
-                    sleep 5
+                    mvn 'clean'
+                    mvn 'install'
+                    mvn 'package'
                 }
             }
         }
