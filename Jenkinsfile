@@ -44,7 +44,7 @@ pipeline {
     }
     post{
         always{
-            slackSend channel: 'slack-notification', message: 'Build successful\n Build Number -' + $(BUILD_NUMBER)
+            slackSend channel: 'slack-notification', message: 'Build successful\n Build Number -' + $BUILD_NUMBER
         }
     }
 }
