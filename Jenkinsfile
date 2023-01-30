@@ -44,8 +44,9 @@ pipeline {
     }
     post{
         always{
-            slackSend channel: 'slack-notification', message: 'Build successful\n Build Number -'
-            slackSend channel: 'slack-notification', message: "${env.JOB_NAME}"
+            slackSend channel: 'slack-notification', message: "Build successful\n Job Name - ${env.JOB_NAME} \n Build Number 
+            - ${env.BUILD_NUMBER} \n Job URL ${env.URL} "
+            //slackSend channel: 'slack-notification', message: "${env.JOB_NAME}"
         }
     }
 }
