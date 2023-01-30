@@ -44,7 +44,7 @@ pipeline {
     }
     post('Slack Message'){
         always{
-            slackSend channel: 'slack-notification', message: "Status - ${currentBuild.currentResult}\n Job Name - ${env.JOB_NAME} \n Build Number - ${env.BUILD_NUMBER} \n Job URL ${env.BUILD_URL} "
+            slackSend channel: 'geolocation', message: "Status - ${currentBuild.currentResult}\n Job Name - ${env.JOB_NAME} \n Build Number - ${env.BUILD_NUMBER} \n Job URL ${env.BUILD_URL} "
             
         }
     }
