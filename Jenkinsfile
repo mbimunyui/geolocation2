@@ -42,6 +42,11 @@ pipeline {
             }
         }
     }
+    post{
+        always{
+            slackSend channel: 'slack-notification', message: 'Build successful'
+        }
+    }
 }
 // test
 //End of build of project. checkin if webhook will function
